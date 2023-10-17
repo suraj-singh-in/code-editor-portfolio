@@ -9,7 +9,7 @@ import { faFolderOpen, faFolder } from "@fortawesome/free-solid-svg-icons";
 
 import { initialFolderStructure } from "@/utils/constant";
 
-const SideBar = () => {
+const SideBar = ({ onCurrentFileChange }) => {
   const [folderStructure, setFolderStructure] = useState(
     initialFolderStructure
   );
@@ -71,6 +71,7 @@ const SideBar = () => {
                             <div
                               index={`${file.key}-${fileIndex}`}
                               className={sideBarStyles.isFile}
+                              onClick={() => onCurrentFileChange(file)}
                             >
                               <FontAwesomeIcon icon={file.icon} />
                               <span className={sideBarStyles.fileName}>

@@ -1,0 +1,29 @@
+.editor {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+
+  font-family: Consolas, "Courier New", monospace;
+
+  .activityBar {
+    max-height: 24px;
+    height: 100%;
+    width: 100%;
+    background-color: #2a2d34;
+  }
+
+  .editorRegion {
+    background: #1f2228;
+  }
+
+  .terminal {
+    max-height: 200px;
+    height: 100%;
+    color: white;
+    border-top: 2px solid #3c3c4a;
+    background: #1f2228;
+    width: 100%;
+  }
+}
