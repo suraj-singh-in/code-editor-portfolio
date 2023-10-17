@@ -5,6 +5,7 @@ import {
   faSquareJs,
   faPython,
   faHtml5,
+  faReact,
 } from "@fortawesome/free-brands-svg-icons";
 
 export const initialFolderStructure = [
@@ -15,6 +16,7 @@ export const initialFolderStructure = [
     files: [
       { name: "Freecharge.js", key: "Freecharge", icon: faSquareJs },
       { name: "ProsperMe.js", key: "ProsperMe", icon: faSquareJs },
+      { name: "MSI-Power.js", key: "MSI", icon: faSquareJs },
     ],
   },
   {
@@ -34,5 +36,18 @@ export const initialFolderStructure = [
       { name: "Tools.html", key: "Tools", icon: faHtml5 },
       { name: "Languages.md", key: "Languages", icon: faCircleInfo },
     ],
+  },
+  {
+    name: "Project",
+    key: "Project",
+    files: [
+      { name: "Actor.js", key: "Actor", icon: faSquareJs },
+      { name: "Portfolio.jsx", key: "Portfolio", icon: faReact },
+    ],
+  },
+  {
+    name: "Achievements",
+    key: "Achievements",
+    files: [{ name: "FC Warrior", key: "FC-Warrior", icon: faSquareJs }],
   },
 ];
