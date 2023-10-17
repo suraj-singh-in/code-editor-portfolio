@@ -5,49 +5,14 @@ import more from "@/static/more.svg";
 import { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolderOpen, faFolder } from "@fortawesome/free-solid-svg-icons";
 
-// Icons
-import {
-  faFolderOpen,
-  faFolder,
-  faCircleInfo,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faSquareJs,
-  faPython,
-  faHtml5,
-} from "@fortawesome/free-brands-svg-icons";
+import { initialFolderStructure } from "@/utils/constant";
 
 const SideBar = () => {
-  const [folderStructure, setFolderStructure] = useState([
-    {
-      name: "Proffesional",
-      key: "Proffesional",
-      isOpen: true,
-      files: [
-        { name: "Freecharge.js", key: "Freecharge", icon: faSquareJs },
-        { name: "ProsperMe.js", key: "ProsperMe", icon: faSquareJs },
-      ],
-    },
-    {
-      name: "Education",
-      key: "Education",
-      files: [
-        { name: "Engineering.py", key: "Engineering", icon: faPython },
-        { name: "Schooling.py", key: "Schooling", icon: faPython },
-      ],
-    },
-    {
-      name: "Technical Skills",
-      key: "technical-skills",
-      files: [
-        { name: "web-development.html", key: "web-development", icon: faHtml5 },
-        { name: "Programming.html", key: "Programming", icon: faHtml5 },
-        { name: "Tools.html", key: "Tools", icon: faHtml5 },
-        { name: "Languages.md", key: "Languages", icon: faCircleInfo },
-      ],
-    },
-  ]);
+  const [folderStructure, setFolderStructure] = useState(
+    initialFolderStructure
+  );
 
   const handleFolderPress = (folder) => {
     let newFolderStructure = folderStructure.map((fold, foldIndex) => {
