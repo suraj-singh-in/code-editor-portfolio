@@ -5,7 +5,11 @@ import more from "@/static/more.svg";
 import { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolderOpen, faFolder } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFolderOpen,
+  faFolder,
+  faFolderClosed,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { initialFolderStructure } from "@/utils/constant";
 
@@ -36,18 +40,20 @@ const SideBar = ({ onCurrentFileChange }) => {
       <div className={sideBarStyles.filesExplorer} key="filesExplorer">
         <div className={sideBarStyles.treeView}>
           <ul className={sideBarStyles.root} key={"unqiue-key"}>
-            <li className={`${sideBarStyles.isFolder} `}>
-              <div className="checkbox partial-check">
+            <li
+              className={`${sideBarStyles.isFolder}  ${sideBarStyles.rootFolder}`}
+            >
+              <div>
                 <label>
-                  {/* <FontAwesomeIcon icon="fa-regular fa-mug-hot" /> */}
-                  <strong>EXPLORER</strong>
+                  <FontAwesomeIcon icon={faFolderClosed} />
+                  <strong className={sideBarStyles.folderName}>EXPLORER</strong>
                 </label>
               </div>
               <ul>
                 {folderStructure.map((folder, folderIndex) => {
                   return (
                     <li
-                      className={`${sideBarStyles.isFolder} `}
+                      className={`${sideBarStyles.isFolder}`}
                       key={`${folder.key}-${folderIndex}`}
                     >
                       <label onClick={() => handleFolderPress(folder)}>
