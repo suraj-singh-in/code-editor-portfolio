@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+.sidebar {
+  background-color: #252526;
+  min-width: 272px;
+  width: 20%;
+
+  .projectHeader {
+    padding: 14px;
+    color: #c4cbda;
+    font: 600 16px Poppins;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.treeView {
+  align-self: center;
+  margin: auto;
+  color: #c4cbda;
+  font-family: Poppins, monospace;
+  font-size: 12px;
+  font-style: normal;
+  line-height: normal;
+
+  ul {
+    margin: 0 0 0 5px;
+    padding: 0 0 0 15px;
+    list-style: none;
+  }
+
+  .root {
+    padding-left: 10px;
+  }
+
+  .isFolder,
+  .isFile {
+    cursor: pointer;
+
+    .folderName,
+    .fileName {
+      margin-left: 5px;
+    }
+
+    .fileName {
+      font-size: 10px;
+    }
+  }
+
+  .isFolder {
+    ul {
+      border-left: 1px dotted #ddd;
+    }
+  }
+
+  .close {
+    max-height: 0px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .open {
+    max-height: 200px;
+    height: 100%;
+  }
+}
