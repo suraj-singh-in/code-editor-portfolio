@@ -8,10 +8,14 @@ import { useState } from "react";
 const MainLayout = () => {
   const [currentFile, setCurrentFile] = useState({});
 
+  const onCurrentFileChange = (selectedFile) => {
+    setCurrentFile(selectedFile);
+  };
+
   return (
     <div className={mainLayoutStyles.container}>
       <ActionBar />
-      <SideBar onCurrentFileChange={setCurrentFile} />
+      <SideBar onCurrentFileChange={onCurrentFileChange} />
       <Editor currentFile={currentFile} />
     </div>
   );
