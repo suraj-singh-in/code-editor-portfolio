@@ -1,3 +1,5 @@
+/* eslint-disable react/no-children-prop   */
+
 // styles
 import editorStyle from "@/styles/VisualStudioCode/Editor.module.scss";
 
@@ -35,6 +37,7 @@ const Editor = ({ currentFile }) => {
             hieght={24}
             width={24}
             onClick={() => setIsRun(true)}
+            alt="play-button"
           />
         </div>
       ) : (
@@ -42,13 +45,15 @@ const Editor = ({ currentFile }) => {
       )}
       <div className={editorStyle.editRegion}>
         {currentFile.code ? (
-          <SyntaxHighlighter
-            children={currentFile.code}
-            language="javascript"
-            style={dracula}
-            showLineNumbers
-            wrapLongLines
-          />
+          <>
+            <SyntaxHighlighter
+              children={currentFile.code}
+              language="javascript"
+              style={dracula}
+              showLineNumbers
+              wrapLongLines
+            />
+          </>
         ) : (
           <></>
         )}

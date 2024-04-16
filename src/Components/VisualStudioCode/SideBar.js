@@ -75,6 +75,7 @@ const SideBar = ({ onCurrentFileChange }) => {
                         {folder.files.map((file, fileIndex) => {
                           return (
                             <div
+                              key={fileIndex}
                               index={`${file.key}-${fileIndex}`}
                               className={sideBarStyles.isFile}
                               onClick={() => onCurrentFileChange(file)}
